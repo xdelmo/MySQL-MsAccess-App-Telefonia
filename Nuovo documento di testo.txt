@@ -1,0 +1,18 @@
+select  c.Cognome, c.Nome_Cliente,  t.Nome_Tariffa, t.Data_Attivazione
+from gestori g, tariffe t, clienti c 
+where g.ID = 6
+ 
+and c.ID = t.ID_Cliente 
+
+and g.ID = t.ID_Gestore 
+
+order by Cognome, Nome_Cliente
+
+
+Option Compare Database
+
+Private Sub Nome_Tariffa_AfterUpdate()
+Minuti = Nome_Tariffa.Column(1)
+SMS = Nome_Tariffa.Column(2)
+Internet = Nome_Tariffa.Column(3)
+End Sub
